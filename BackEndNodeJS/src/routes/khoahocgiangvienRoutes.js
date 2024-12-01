@@ -3,6 +3,5 @@ import { getKhoaHocGiangVien } from '../controllers/khoahocgiangvienController.j
 
 const router = express.Router();
 
-router.get('/khoahocgiangvien', getKhoaHocGiangVien);
 
 export default router;

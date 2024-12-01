@@ -1,8 +1,5 @@
-// Controller để xử lý logic cho API
-
 import db from '../config/db.js';
 
-// Hàm để lấy tất cả dữ liệu từ bảng 'congnghe'
 export const getNoiDungCongNghe = (req, res) => {
   const sql = 'SELECT * FROM noidungcongnghe';
   db.query(sql, (err, result) => {
@@ -11,6 +8,6 @@ export const getNoiDungCongNghe = (req, res) => {
       res.status(500).json({ error: 'Lỗi khi lấy dữ liệu từ cơ sở dữ liệu' });
       return;
     }
-    res.json(result); // Trả về kết quả dưới dạng JSON
+    res.json(result); 
   });
 };

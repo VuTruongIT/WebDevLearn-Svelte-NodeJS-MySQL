@@ -1,7 +1,6 @@
 import db from '../config/db.js';
 import jwt from 'jsonwebtoken';
 
-
 export const loginNguoiDung = (req, res) => {
   const { username, password } = req.body;
 
@@ -53,19 +52,6 @@ export const loginNguoiDung = (req, res) => {
   });
 };
 
-// API Lấy danh sách người dùng (cần xác thực)
-export const getNguoiDung = (req, res) => {
-  const sql = 'SELECT * FROM nguoidung';
-  db.query(sql, (err, results) => {
-    if (err) {
-      console.error('Lỗi khi truy vấn MySQL:', err);
-      return res.status(500).json({ error: 'Lỗi server' });
-    }
-    res.json(results); // Trả về danh sách người dùng
-  });
-};
-
-//tìm kiếm
 export const searchAndPaginateNguoiDung = (req, res) => {
   // Lấy tham số từ query string
   const { searchKeyword = '', page = 1, limit = 10 } = req.query;
@@ -103,7 +89,7 @@ export const searchAndPaginateNguoiDung = (req, res) => {
     }
   });
 };
-//get-by-id
+
 export const getByIdNguoiDung = (req, res) => {
   const { id } = req.params; // Lấy id từ tham số URL
 
@@ -129,13 +115,13 @@ export const getByIdNguoiDung = (req, res) => {
     return res.json(data[0]); // Trả về bản ghi đầu tiên
   });
 };
-// Format date to match MySQL DATETIME format (YYYY-MM-DD HH:MM:SS)
+
 const formatDate = (date) => {
   if (!date) return null; // If no date is provided, return null
   const d = new Date(date);
   return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')} ${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}:${d.getSeconds().toString().padStart(2, '0')}`;
 };
-//add
+
 export const addNguoiDung = (req, res) => {
   const {
     TenDangNhap,
@@ -187,8 +173,8 @@ export const addNguoiDung = (req, res) => {
     return res.status(201).json({ message: 'User added successfully', data: result });
   });
 };
-//update
-import crypto from 'crypto'; // Dùng để mã hóa mật khẩu
+
+import crypto from 'crypto'; 
 export const updateNguoiDung = (req, res) => {
   const { id } = req.params; // Lấy ID từ URL
   const {
@@ -267,7 +253,7 @@ export const updateNguoiDung = (req, res) => {
     });
   });
 };
-//delete
+
 export const deleteByIdNguoiDung = (req, res) => {
   const { id } = req.params; // Lấy ID từ tham số URL
   const parsedId = parseInt(id);
@@ -298,7 +284,7 @@ export const deleteByIdNguoiDung = (req, res) => {
     res.json({ message: 'Người dùng đã được xóa thành công' });
   });
 };
-//delete-mutil
+
 export const deleteNguoiDung = (req, res) => {
   const ids = req.body.ids; // Dự kiến nhận một mảng các ID cần xóa
 

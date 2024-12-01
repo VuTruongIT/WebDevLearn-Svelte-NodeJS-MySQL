@@ -1,11 +1,20 @@
-// Định nghĩa các route của API
-
 import express from 'express';
-import { getQuyen } from '../controllers/quyenController.js';
+import {
+  searchAndPaginateQuyen,
+  getByIdQuyen,
+  addQuyen,
+  updateQuyen,
+  deleteByIdQuyen,
+  deleteQuyen
+} from '../controllers/quyenController.js'; 
 
 const router = express.Router();
 
-// Định nghĩa route để lấy dữ liệu từ 'congnghe'
-router.get('/quyen', getQuyen);
+router.get('/quyen/search', searchAndPaginateQuyen);
+router.get('/quyen/get-by-id/:id', getByIdQuyen);
+router.post('/quyen/add', addQuyen);
+router.put('/quyen/update/:id', updateQuyen);
+router.delete('/quyen/delete/:id', deleteByIdQuyen);
+router.delete('/quyen/delete', deleteQuyen);
 
 export default router;

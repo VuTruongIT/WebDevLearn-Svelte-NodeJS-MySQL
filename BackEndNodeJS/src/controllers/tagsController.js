@@ -2,7 +2,6 @@
 
 import db from '../config/db.js';
 
-// Hàm để lấy tất cả dữ liệu từ bảng 'congnghe'
 export const getTags = (req, res) => {
   const sql = 'SELECT * FROM tags';
   db.query(sql, (err, result) => {

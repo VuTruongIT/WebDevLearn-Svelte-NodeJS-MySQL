@@ -20,3 +20,4 @@ export interface CongNghe {
 	MetaDescription: string | null;
 	TrangThai: boolean;
 }
+

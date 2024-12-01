@@ -81,7 +81,7 @@
             >Technology type</a
           >
           <a class="nav-link text-white mb-2" href="/congnghe" aria-label="Công nghệ"
-            >Công nghệ</a
+            >Technology</a
           >
           <a class="nav-link text-white mb-2" href="/" aria-label="Delete Item"
             >Delete Item</a

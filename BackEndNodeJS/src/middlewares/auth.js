@@ -66,11 +66,6 @@ export const verifyPermission = (requiredPermission) => {
   };
 };
 
-
-
-
-
-
 // Middleware: Chỉ cho phép Admin
 export const verifyAdmin = (req, res, next) => {
   const { role } = req.user;

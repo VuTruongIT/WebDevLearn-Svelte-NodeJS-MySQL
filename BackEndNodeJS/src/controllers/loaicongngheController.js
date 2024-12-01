@@ -1,17 +1,5 @@
 import db from '../config/db.js';
 
-// test
-export const getLoaiCongNghe = (req, res) => {
-  const sql = 'SELECT * FROM loaicongnghe';
-  db.query(sql, (err, result) => {
-    if (err) {
-      console.error('Lỗi khi truy vấn MySQL:', err);
-      res.status(500).json({ error: 'Lỗi khi lấy dữ liệu từ cơ sở dữ liệu' });
-      return;
-    }
-    res.json(result); // Trả về kết quả dưới dạng JSON
-  });
-};
 
 export const searchAndPaginateLoaiCongNghe = (req, res) => {
   const { searchKeyword = '', page = 1, limit = 10 } = req.query;
@@ -81,7 +69,6 @@ export const getByIdAndTenLoaiCongNghe = (req, res) => {
   });
 };
 
-// Format date to match MySQL DATETIME format (YYYY-MM-DD HH:MM:SS)
 const formatDate = (date) => {
   if (!date) return null; // If no date is provided, return null
   const d = new Date(date);

@@ -1,7 +1,7 @@
 import express from 'express';
 import { 
   loginNguoiDung, 
-  getNguoiDung,
+  // getNguoiDung,
   searchAndPaginateNguoiDung,
   getByIdNguoiDung,
   addNguoiDung,
@@ -17,7 +17,7 @@ const router = express.Router();
 router.post('/login', loginNguoiDung);
 
 // Route lấy danh sách người dùng (cần xác thực bằng token)
-router.get('/nguoidung', verifyToken, getNguoiDung);
+// router.get('/nguoidung', verifyToken, getNguoiDung);
 
 // Route dành riêng cho Admin (ktra xem có phải vai trò admin không)
 router.get('/admin/data', verifyToken, verifyAdmin, (req, res) => {

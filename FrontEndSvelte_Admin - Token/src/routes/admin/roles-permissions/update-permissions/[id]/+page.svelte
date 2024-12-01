@@ -1,9 +1,9 @@
 
 <script lang="ts">
-	import Header from '../../components/Header.svelte';
-	import Sidebar from '../../components/Sidebar.svelte';
-	import CongNgheContent from '../../components/CongNghe/CongNgheContent.svelte';
-	import Footer from '../../components/Footer.svelte';
+	import Header from '../../../../../components/Header.svelte';
+	import Sidebar from '../../../../../components/Sidebar.svelte';
+	import Update from '../../../../../components/AdminRoles-Permissions/updatePermission.svelte';
+	import Footer from '../../../../../components/Footer.svelte';
 
 </script>
 
@@ -14,7 +14,7 @@
 		<div class="d-flex flex-grow-1">
 		  <Sidebar/>
 
-		  <CongNgheContent />
+		  <Update />
 		</div>
 		<Footer/>
 	</main>

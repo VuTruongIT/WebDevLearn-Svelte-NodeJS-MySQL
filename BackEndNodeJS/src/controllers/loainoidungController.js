@@ -2,7 +2,6 @@
 
 import db from '../config/db.js';
 
-// Hàm để lấy tất cả dữ liệu từ bảng 'congnghe'
 export const getLoaiNoiDung = (req, res) => {
   const sql = 'SELECT * FROM loainoidung';
   db.query(sql, (err, result) => {
@@ -11,6 +10,6 @@ export const getLoaiNoiDung = (req, res) => {
       res.status(500).json({ error: 'Lỗi khi lấy dữ liệu từ cơ sở dữ liệu' });
       return;
     }
-    res.json(result); // Trả về kết quả dưới dạng JSON
+    res.json(result); 
   });
 };

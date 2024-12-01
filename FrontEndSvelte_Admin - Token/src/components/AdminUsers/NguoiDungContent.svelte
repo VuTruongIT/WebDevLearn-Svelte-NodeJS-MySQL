@@ -116,6 +116,7 @@
             method: "DELETE",
           });
           fetchItems();
+          location.reload();
         } catch (error) {
           console.error("Error deleting user:", error);
         }
@@ -187,14 +188,14 @@
   }
 
   async function deleteSelectedItems() {
-    if (selectedItems.size === 0) {
-      alert("No items selected.");
-      return;
-    }
-
+    
     const userRole = localStorage.getItem("role");
-
+    
     if (userRole === "SuperAdmin") {
+      if (selectedItems.size === 0) {
+        alert("No items selected.");
+        return;
+      }
       if (confirm("Are you sure you want to delete the selected items?")) {
         const idsToDelete = Array.from(selectedItems); // Lấy danh sách ID đã chọn
         try {
@@ -209,7 +210,7 @@
 
           // Sau khi xóa, tải lại danh sách
           fetchItems();
-
+          location.reload();
           // Reset danh sách đã chọn và hủy chọn tất cả checkbox
           selectedItems.clear(); // Xóa danh sách các mục đã chọn
           const checkboxes = document.querySelectorAll(
@@ -226,7 +227,9 @@
       } else {
         goto("/access-denied");
       }
-    }
+    }else {
+        goto("/access-denied");
+      }
   }
 
   function viewPermissions(userId: number) {
