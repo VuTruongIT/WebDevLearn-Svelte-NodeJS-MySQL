@@ -232,7 +232,7 @@
 <!-- Main Content -->
 <div class="content flex-grow-1 p-4">
   <header class="d-flex justify-content-between align-items-center mb-4">
-    <h1 style="font-size: 1.25rem;">Technology management</h1>
+    <h1 style="font-size: 1.25rem;">Technology content management</h1>
     <div>
       <button class="btn btn-success me-2" on:click={addItem}>
         Add New Item

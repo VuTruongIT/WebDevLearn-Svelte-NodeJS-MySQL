@@ -10,14 +10,14 @@ export interface CongNghe {
 	PhienBan: string;
 	STT: number | null;
 	Tags: string | null;
-	HienThiTrangChu: boolean;
-	HienThiHot: boolean;
+	HienThiTrangChu: number;
+	HienThiHot: number;
 	NgayTao: string;
 	NguoiTao: string | null;
 	NgayCapNhat: string | null;
 	NguoiCapNhat: string | null;
 	MetaKeyword: string | null;
 	MetaDescription: string | null;
-	TrangThai: boolean;
+	TrangThai: number;
 }
 

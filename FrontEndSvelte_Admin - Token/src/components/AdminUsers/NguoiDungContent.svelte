@@ -327,7 +327,6 @@
             <td>{shortenEmail(item.Email)}</td>
             <td>{item.SoDienThoai}</td>
             <td>{item.VaiTro}</td>
-            <!-- Hiển thị tên vai trò -->
             <td>
               {#if item.TrangThai === "HoatDong"}
                 <span class="badge bg-success">Active</span>
@@ -339,7 +338,6 @@
                 <span class="badge bg-secondary">Unknown</span>
               {/if}
             </td>
-            <!-- <td>{formatDate(item.NgayDangKy)}</td> -->
             <td>
               <button
                 class="btn btn-info btn-sm"

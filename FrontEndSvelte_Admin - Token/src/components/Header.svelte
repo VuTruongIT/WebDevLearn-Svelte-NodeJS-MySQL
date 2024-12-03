@@ -20,14 +20,17 @@
     logout();
     goto('/login'); // Chuyển hướng về trang login sau khi logout
   }
-
-  // let username = 'giangvien01';
-  // let role = 'Admin'; // Example role
-  // let email = 'giangvien01@example.com';
   function goToProfile() {
-    // Redirect to the admin profile page
-    goto('/admin/profile');
-  }
+    const userRole = localStorage.getItem('userId'); 
+
+    // Assuming you want to route to different profiles based on userRole
+    if (userRole) {
+        goto(`/admin-profile/${userRole}`);
+    } else {
+        console.error('User role not found');
+    }
+}
+
 </script>
 
 <header class="header bg-light shadow-sm p-3 d-flex justify-content-between align-items-center">

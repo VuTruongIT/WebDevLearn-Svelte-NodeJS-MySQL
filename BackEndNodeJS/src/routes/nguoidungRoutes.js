@@ -10,6 +10,7 @@ import {
   deleteNguoiDung
 } from '../controllers/nguoidungController.js';
 import { verifyToken, verifyAdmin } from '../middlewares/auth.js';
+import { getByIdThongTinNguoiDung } from '../services/nguoiDungServices.js';
 
 const router = express.Router();
 
@@ -30,5 +31,8 @@ router.post('/nguoidung/add', addNguoiDung);
 router.put('/nguoidung/update/:id', updateNguoiDung);
 router.delete('/nguoidung/delete/:id', deleteByIdNguoiDung);
 router.delete('/nguoidung/delete', deleteNguoiDung);
+
+router.get('/thongtinnguoidung/get-by-id/:id', getByIdThongTinNguoiDung);
+
 
 export default router;

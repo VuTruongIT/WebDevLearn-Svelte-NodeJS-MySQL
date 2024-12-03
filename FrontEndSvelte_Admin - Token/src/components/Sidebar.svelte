@@ -83,8 +83,8 @@
           <a class="nav-link text-white mb-2" href="/congnghe" aria-label="Công nghệ"
             >Technology</a
           >
-          <a class="nav-link text-white mb-2" href="/" aria-label="Delete Item"
-            >Delete Item</a
+          <a class="nav-link text-white mb-2" href="/noidungcongnghe" aria-label="Nội dung công nghệ"
+            >Technology Content</a
           >
         </div>
       {/if}
